@@ -1,6 +1,6 @@
 {
-  "name": "awsSolArchPro",
-  "author": "Cloud Pros",
+  "name": "SafeCommerce",
+  "author": "Faeez Shaikh",
   "homepage": "https://www.facebook.com/awsarchitect",
   "private": true,
   "scripts": {
@@ -43,7 +43,7 @@
     "zone.js": "0.7.2"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "1.1.4",
+    "@ionic/app-scripts": "^3.1.5",
     "ionic": "3.19.0",
     "typescript": "2.0.9"
   },
@@ -63,7 +63,7 @@
       "locator": "ios"
     }
   ],
-  "description": "awsSolArchPro: An AWS Quiz Project",
+  "description": "SafeCommerce",
   "cordova": {
     "plugins": {
       "cordova-plugin-console": {},
