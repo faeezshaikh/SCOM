@@ -4,7 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { ContactUsPage } from '../pages/contactUsPage/contactUsPage';
-import { TopicsListPage } from '../pages/topicsListPage/topicsListPage';
+import { CommunityListPage } from '../pages/communityListPage/communityListPage';
 import { VideosPage } from '../pages/videos/videos';
 import {WhitepapersPage } from '../pages/whitepapers/whitepapers';
 
@@ -19,7 +19,7 @@ import {MyDataService} from '../providers/my-data-service';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = TopicsListPage;
+  rootPage: any = CommunityListPage;
   pages: Array<{title: string, component: any, icon: string}>;
   loggedInUserEmail: string;
 
@@ -36,7 +36,7 @@ export class MyApp {
     this.initializeApp();
 
     this.pages = [
-      { title: 'Practice Exams', component: TopicsListPage, icon: 'list' },
+      { title: 'Community', component: CommunityListPage, icon: 'list' },
       { title: 'Video Resources', component: VideosPage, icon: 'logo-youtube' },
       { title: 'Other Resources', component: WhitepapersPage, icon: 'folder' },
       { title: 'Contact Us', component: ContactUsPage, icon: 'people' }

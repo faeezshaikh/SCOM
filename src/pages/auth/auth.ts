@@ -9,7 +9,7 @@ import {
   RegistrationUser
 } from "../../providers/cognito.service";
 // import {ControlPanelPage} from "../controlpanel/controlpanel";
-import { TopicsListPage } from "../topicsListPage/topicsListPage";
+import { CommunityListPage } from "../communityListPage/communityListPage";
 import {EventsService} from "../../providers/events.service";
 
 
@@ -40,7 +40,7 @@ export class LoginPage implements CognitoCallback, LoggedInCallback {
       // If the user is signed in, dont prompt for creds, send them to home page
     if (this.userService.isAuthenticated(this)) {
       this.eventService.sendLoggedInEvent();
-      this.nav.setRoot(TopicsListPage);
+      this.nav.setRoot(CommunityListPage);
     }
 
   }
@@ -68,8 +68,8 @@ export class LoginPage implements CognitoCallback, LoggedInCallback {
       this.doAlert("Error", message);
       console.log("result: " + message);
     } else { //success
-      console.log("Redirect to TopicsListPage");
-      this.nav.setRoot(TopicsListPage);
+      console.log("Redirect to communityListPage");
+      this.nav.setRoot(CommunityListPage);
     }
     this.processingSignin = false;
       console.log("processingSignin is:" , this.processingSignin);
@@ -81,7 +81,7 @@ export class LoginPage implements CognitoCallback, LoggedInCallback {
        //  console.log('Already Authenticated..Setting email:',this.email);
       //this.dataService.setLoggedInUserEmail(this.email);
       this.eventService.sendLoggedInEvent();
-      this.nav.setRoot(TopicsListPage);
+      this.nav.setRoot(CommunityListPage);
     }
   }
 

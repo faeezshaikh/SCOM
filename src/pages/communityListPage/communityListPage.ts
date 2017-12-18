@@ -12,9 +12,9 @@ import { MySocialShareService } from '../../providers/my-social-share-service';
 
 @Component({
   selector: 'page-page2',
-  templateUrl: 'topicsListPage.html'
+  templateUrl: 'communityListPage.html'
 })
-export class TopicsListPage {
+export class CommunityListPage {
   selectedItem: any;
   icons: string[];
   topics: Array<{ no: number, title: string, note: string, icon: string, hiScore: string }>;

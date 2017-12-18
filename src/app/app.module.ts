@@ -6,7 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { ContactUsPage } from '../pages/contactUsPage/contactUsPage';
-import { TopicsListPage } from '../pages/topicsListPage/topicsListPage';
+import { CommunityListPage } from '../pages/communityListPage/communityListPage';
 import { TopicDetailPage } from '../pages/topicDetailPage/topicDetailPage';
 import { MyDataService } from '../providers/my-data-service';
 import { MyLocalStorage } from '../providers/my-local-storage';
@@ -42,7 +42,7 @@ import {EventsService} from "../providers/events.service";
   declarations: [
     MyApp,
     ContactUsPage,
-    TopicsListPage,
+    CommunityListPage,
     TopicDetailPage,
     ExplanationModal,
     ExamStartingModal,
@@ -64,7 +64,7 @@ import {EventsService} from "../providers/events.service";
   entryComponents: [
     MyApp,
     ContactUsPage,
-    TopicsListPage,
+    CommunityListPage,
     TopicDetailPage,
     ExplanationModal,
     ExamStartingModal,
