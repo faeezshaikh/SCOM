@@ -8,23 +8,30 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class WhitepapersPage {
 
-  whitepapers: Array<{ no: number, title: string, note: string,link:string}>;
+  current: Array<{ pic: string, name: string, status: string,points:string}> = [];
+  past: Array<{ pic: string, name: string, status: string,points:string}>=[];
+  pending: Array<{ pic: string, name: string, status: string,points:string}>=[];
+  myContracts = "current";
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.whitepapers = [{no:1,title:"Overview of Security Processes",note:"sdfsdfsd",link:"https://d0.awsstatic.com/whitepapers/Security/AWS_Security_Best_Practices.pdf"},
-    {no:2,title:"Storage Options in the Cloud",note:"sdfsdfsd",link:"https://d0.awsstatic.com/whitepapers/Storage/AWS%20Storage%20Services%20Whitepaper-v9.pdf"},
-    {no:3,title:"Fault Tolerant Apps in the cloud",note:"sdfsdfsd",link:"https://d0.awsstatic.com/whitepapers/aws-building-fault-tolerant-applications.pdf"},
-    {no:4,title:"Overview of AWS",note:"sdfsdfsd",link:"https://d0.awsstatic.com/whitepapers/aws-overview.pdf"},
-    {no:5,title:"Compliance Whitepaper",note:"sdfsdfsd",link:"https://d0.awsstatic.com/whitepapers/compliance/AWS_Risk_and_Compliance_Whitepaper.pdf"},
-    {no:6,title:"Architecting for the AWS Cloud",note:"sdfsdfsd",link:"https://d0.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf"}];
+
+      this.current.push({pic:'http://sanitaryconstruction.com/wp-content/uploads/2016/01/testi-3.jpg',name:'John Doe',status:'Active',points:'56'});
+      this.current.push({pic:'http://www.hoeinger-sv.de/wp-content/uploads/2017/05/staff6.jpg?x32921',name:'Tom Rice',status:'Active',points:'34'});
+
+      this.past.push({pic:'https://silkui.outsystems.com/img/Avatar.jpg?1627',name:'Jsn Eli',status:'Completed',points:'12'});
+      this.past.push({pic:'https://2oq5cg28288838bmfu32g94v-wpengine.netdna-ssl.com/wp-content/uploads/2015/01/Alice-Bricogne-320x289.jpg',name:'Joe Moe',status:'Aborted',points:'33'});
+      this.past.push({pic:'https://www.ogier.com/images/people/alice-bricogne/alice-bricogne.jpg',name:'Alice Tim',status:'Aborted',points:'67'});
+
+      this.pending.push({pic:'http://i1.wp.com/www.alicekeeler.com/wp-content/uploads/2017/03/Alice-Headshot.jpg?w=1080',name:'Tim Ferris',status:'Invitation Sent',points:'22'});
+      this.pending.push({pic:'https://www.ogier.com/images/people/alice-bricogne/alice-bricogne.jpg',name:'Jane Doe',status:'Confirmation Pending',points:'11'});
+
+
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WhitepapersPage');
   }
 
-openLink(e,link) {
-    	window.open(link, '_system', 'location=yes');
-			return false;
-  }
+
 
 }

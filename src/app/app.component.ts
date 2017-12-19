@@ -37,8 +37,8 @@ export class MyApp {
 
     this.pages = [
       { title: 'Community', component: CommunityListPage, icon: 'list' },
+      { title: 'My Contracts', component: WhitepapersPage, icon: 'folder' },
       { title: 'Video Resources', component: VideosPage, icon: 'logo-youtube' },
-      { title: 'Other Resources', component: WhitepapersPage, icon: 'folder' },
       { title: 'Contact Us', component: ContactUsPage, icon: 'people' }
     ];
 
