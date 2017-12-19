@@ -1,10 +1,21 @@
+<style>
+     .circle {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 4px solid;
+    border-color: white;
+    display: block;
+    margin: 0 auto;
+  }
+</style>
 <ion-header>
 
-    <ion-navbar hideBackButton color="primary">
+    <ion-navbar  color="primary">
         <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-        <ion-title>Member Details</ion-title>
+        <ion-title>{{member.name}}</ion-title>
     </ion-navbar>
 
 </ion-header>
@@ -12,17 +23,19 @@
 
 <ion-content padding id="listScroll">
 
-    <ion-card>
-        
+    <ion-card ng-if="member!=null">
+<!--         
           <ion-item>
             <ion-avatar item-start>
-              <img src="img/marty-avatar.png">
+              <img src="{{member.pic}}">
             </ion-avatar>
-            <h2>Marty McFly</h2>
+            <h2>{{member.name}}</h2>
             <p>November 5, 1955</p>
-          </ion-item>
+          </ion-item> -->
         
-          <img src="img/advance-card-bttf.png">
+          <p text-align="center">
+              <img src="{{member.pic}}" class="circle">
+          </p>
         
           <ion-card-content>
             <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
@@ -48,8 +61,8 @@
             </ion-col>
           </ion-row>
 
-          <button ion-button block>Block Button</button>
-          <button ion-button full>Full Button</button>
+          <button ion-button block>Initiate Contract</button>
+          <!-- <button ion-button full>Full Button</button> -->
         
         </ion-card>
 

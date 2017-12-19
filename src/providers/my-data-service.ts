@@ -58,11 +58,16 @@ export class MyDataService {
   }
 
 
-  getData(topic: number) {
-  return this.load(topic).then(res => {
-    this.data = res;
-    return this.data;
-  });
+//   getData(topic: number) {
+//   return this.load(topic).then(res => {
+//     this.data = res;
+//     return this.data;
+//   });
+// }
+
+
+getMemberDetails(index: number) {
+  return this.communityMembers[index];
 }
 
   initCommunityMembers() {
@@ -94,22 +99,7 @@ export class MyDataService {
       time: string;
     }
     this.topicMap.forEach((value: string, key: number) => {
-        // console.log(key, value);
-        this.getData(key).then((resp) => {
-            let t = new Topic();
-            t.no = key;
-            t.title = resp.quiz.name;
-            t.note = resp.questions.length + ' questions';
-            t.icon = resp.quiz.logo;
-            t.time = resp.quiz.time;
-
-
-            if (this.topics.length != this.topicMap.size) {
-               // some kinda bug, adding twice hence frocing to break after the size is reached.
-              this.topics.push(t);
-            }
-            
-        });
+    
     });
   console.log('Formed Topics Array:', this.topics);
   return this.topics;

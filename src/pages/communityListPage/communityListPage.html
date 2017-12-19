@@ -35,8 +35,8 @@
   
 
     <ion-item-divider color="light">A-J </ion-item-divider>
-    <ion-item-group [reorder]="reorder" (ionItemReorder)="reorderTopics($event)">
-      <ion-item-sliding *ngFor="let member of members | slice:0:8; let i = index;" (click)="itemTapped($event, topic)" detail-push>
+    <ion-item-group >
+      <ion-item-sliding *ngFor="let member of members; let i = index" (click)="itemTapped($event, member,i)" detail-push>
       <!--  <ion-item (click)="itemTapped($event, topic)" detail-push>-->
 
         <ion-item>

@@ -50,9 +50,9 @@ export class CommunityListPage {
 
   }
 
-  itemTapped(event, topic) {
+  itemTapped(event, member, index) {
     this.navCtrl.push(TopicDetailPage, {
-      topic: topic
+      member: member, index: index
     });
   }
 
