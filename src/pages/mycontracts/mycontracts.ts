@@ -11,7 +11,7 @@ export class MyContractsPage {
   current: Array<{ pic: string, name: string, status: string,points:string}> = [];
   past: Array<{ pic: string, name: string, status: string,points:string}>=[];
   pending: Array<{ pic: string, name: string, status: string,points:string}>=[];
-  myContracts = "current";
+  myContracts = "pending";
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
       this.current.push({pic:'http://sanitaryconstruction.com/wp-content/uploads/2016/01/testi-3.jpg',name:'John Doe',status:'Active',points:'56'});

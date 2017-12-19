@@ -17,19 +17,59 @@
 
     <div padding>
         <ion-segment [(ngModel)]="myContracts">
+            <ion-segment-button value="pending">
+                Pending
+              </ion-segment-button>
           <ion-segment-button value="current">
             Current
           </ion-segment-button>
           <ion-segment-button value="past">
             Past
           </ion-segment-button>
-          <ion-segment-button value="pending">
-              Pending
-            </ion-segment-button>
+       
         </ion-segment>
       </div>
       
       <div [ngSwitch]="myContracts">
+
+
+          <ion-list *ngSwitchCase="'pending'">
+             <ion-item-sliding *ngFor="let p of pending">
+                <ion-item >
+                  <ion-thumbnail item-left>
+                    <img src="{{p.pic}}">
+                  </ion-thumbnail>
+                  <h2>{{p.name}}</h2>
+                  <p>Escrow Amt: 100 Trex</p>
+                  <p>Expiry Date: Jan 16, 2018</p>
+                </ion-item>
+             
+
+              <ion-item-options side="left">
+                  <button ion-button color="primary">
+                    <ion-icon name="text"></ion-icon>
+                    Text
+                  </button>
+                  <button ion-button color="danger">
+                    <ion-icon name="call"></ion-icon>
+                    Call
+                  </button>
+                </ion-item-options>
+                <ion-item-options side="right" *ngIf="p.name == 'Tim Ferris'">
+                  <button ion-button color="secondary">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    Approve
+                  </button>
+                </ion-item-options>
+                <ion-item-options side="right" *ngIf="p.name != 'Tim Ferris'">
+                    <button ion-button color="disabled">
+                      <ion-icon name="timer"></ion-icon>
+                      Waiting
+                    </button>
+                  </ion-item-options>
+            </ion-item-sliding>
+          </ion-list>
+
         <ion-list *ngSwitchCase="'current'">
           <ion-item *ngFor="let m of current">
             <ion-thumbnail item-left>
@@ -37,7 +77,6 @@
             </ion-thumbnail>
             <h2>Ruby</h2>
           </ion-item>
-          ...
         </ion-list>
       
         <ion-list *ngSwitchCase="'past'">
@@ -47,19 +86,9 @@
             </ion-thumbnail>
             <h2>Luna</h2>
           </ion-item>
-          ...
         </ion-list>
 
 
-        <ion-list *ngSwitchCase="'pending'">
-            <ion-item *ngFor="let p of pending">
-              <ion-thumbnail item-left>
-                <img src="{{p.pic}}">
-              </ion-thumbnail>
-              <h2>Luna</h2>
-            </ion-item>
-            ...
-          </ion-list>
 
 
       </div>
