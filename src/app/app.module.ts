@@ -17,7 +17,7 @@ import { SimpleTimer } from 'ng2-simple-timer';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { MySocialShareService } from '../providers/my-social-share-service';
 import { VideosPage } from '../pages/videos/videos';
-import { WhitepapersPage } from '../pages/whitepapers/whitepapers';
+import { MyContractsPage } from '../pages/mycontracts/mycontracts';
 
 import {
   CognitoUtil,
@@ -54,7 +54,7 @@ import {EventsService} from "../providers/events.service";
     ForgotPasswordStep1Page,
     ForgotPasswordStep2Page,
     VideosPage,
-    WhitepapersPage
+    MyContractsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -76,7 +76,7 @@ import {EventsService} from "../providers/events.service";
     ForgotPasswordStep1Page,
     ForgotPasswordStep2Page,
     VideosPage,
-    WhitepapersPage
+    MyContractsPage
 
   ],
   providers: [
