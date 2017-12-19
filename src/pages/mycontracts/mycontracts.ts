@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams,ToastController } from 'ionic-angular';
 
 
 @Component({
@@ -12,7 +12,7 @@ export class MyContractsPage {
   past: Array<{ pic: string, name: string, status: string,points:string}>=[];
   pending: Array<{ pic: string, name: string, status: string,points:string}>=[];
   myContracts = "pending";
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private toastCtrl: ToastController) {
 
       this.current.push({pic:'http://sanitaryconstruction.com/wp-content/uploads/2016/01/testi-3.jpg',name:'John Doe',status:'Active',points:'56'});
       this.current.push({pic:'http://www.hoeinger-sv.de/wp-content/uploads/2017/05/staff6.jpg?x32921',name:'Tom Rice',status:'Active',points:'34'});
@@ -28,9 +28,27 @@ export class MyContractsPage {
 
   }
 
+  approve() {
+    this.presentToast();
+      
+  }
+
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: 'Contract was approved successfully.',
+      duration: 3000,
+      position: 'bottom'
+    });
+
+    toast.present();
+  }
+  
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad WhitepapersPage');
   }
+
+  
 
 
 

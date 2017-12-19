@@ -34,6 +34,8 @@
 
 
           <ion-list *ngSwitchCase="'pending'">
+              <ion-item-divider color="light">Waiting for Your Approval</ion-item-divider>
+              
              <ion-item-sliding *ngFor="let p of pending">
                 <ion-item >
                   <ion-thumbnail item-left>
@@ -56,7 +58,7 @@
                   </button>
                 </ion-item-options>
                 <ion-item-options side="right" *ngIf="p.name == 'Tim Ferris'">
-                  <button ion-button color="secondary">
+                  <button ion-button color="secondary" (click)="approve()">
                     <ion-icon name="checkmark-circle-outline"></ion-icon>
                     Approve
                   </button>
@@ -68,6 +70,46 @@
                     </button>
                   </ion-item-options>
             </ion-item-sliding>
+
+            
+            <ion-item-divider color="light">Invitations Sent</ion-item-divider>
+            <ion-item-sliding *ngFor="let p of pending">
+                <ion-item >
+                  <ion-thumbnail item-left>
+                    <img src="{{p.pic}}">
+                  </ion-thumbnail>
+                  <h2>{{p.name}}</h2>
+                  <p>Escrow Amt: 100 Trex</p>
+                  <p>Expiry Date: Jan 16, 2018</p>
+                </ion-item>
+             
+
+              <ion-item-options side="left">
+                  <button ion-button color="primary">
+                    <ion-icon name="text"></ion-icon>
+                    Text
+                  </button>
+                  <button ion-button color="danger">
+                    <ion-icon name="call"></ion-icon>
+                    Call
+                  </button>
+                </ion-item-options>
+                <ion-item-options side="right" *ngIf="p.name == 'Tim Ferris'">
+                  <button ion-button color="secondary" (click)="approve()">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                    Approve
+                  </button>
+                </ion-item-options>
+                <ion-item-options side="right" *ngIf="p.name != 'Tim Ferris'">
+                    <button ion-button color="disabled">
+                      <ion-icon name="timer"></ion-icon>
+                      Waiting
+                    </button>
+                  </ion-item-options>
+            </ion-item-sliding>
+
+
+
           </ion-list>
 
         <ion-list *ngSwitchCase="'current'">

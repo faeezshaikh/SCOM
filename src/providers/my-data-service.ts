@@ -71,6 +71,7 @@ getMemberDetails(index: number) {
 }
 
   initCommunityMembers() {
+  
     this.communityMembers.push({'pic':'http://sanitaryconstruction.com/wp-content/uploads/2016/01/testi-3.jpg','name':'John Doe','publicKey':'12345','reputation':'45'});
     this.communityMembers.push({'pic':'http://www.hoeinger-sv.de/wp-content/uploads/2017/05/staff6.jpg?x32921','name':'Tom Rice','publicKey':'12345','reputation':'45'});
     this.communityMembers.push({'pic':'https://silkui.outsystems.com/img/Avatar.jpg?1627','name':'Joe Dough','publicKey':'12345','reputation':'45'});
@@ -89,6 +90,29 @@ getMemberDetails(index: number) {
   getTopicsArray() {
     console.log(" ==== Getting Topics Array ====");
     
+
+    class Contract {
+      stratDate: Date;
+      endDate: Date;
+      status: string;  // active, aborted, completed, disputed, pending
+      requester: string; // memberId
+      notes: string;
+      otherParty: string // memberId;
+      requesterAmt: number;
+      otherPartyAmt: number;
+    };
+    class Member {
+      pic: string;
+      memberId: string;
+      firstName: string;
+      lastName: string;
+      email: string;
+      phone: string;
+      joinDate: Date;
+      score: number;
+      noOfContracts: number;
+      contracts: Array<Contract>;
+    };
     
     class Topic {
       no: number;
@@ -103,6 +127,8 @@ getMemberDetails(index: number) {
     });
   console.log('Formed Topics Array:', this.topics);
   return this.topics;
+
+  
     
 
 }
