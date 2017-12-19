@@ -34,9 +34,9 @@
   <ion-list>
   
 
-    <ion-item-divider color="light">Practice </ion-item-divider>
+    <ion-item-divider color="light">A-J </ion-item-divider>
     <ion-item-group [reorder]="reorder" (ionItemReorder)="reorderTopics($event)">
-      <ion-item-sliding *ngFor="let member of topics | slice:0:8; let i = index;" (click)="itemTapped($event, topic)" detail-push>
+      <ion-item-sliding *ngFor="let member of members | slice:0:8; let i = index;" (click)="itemTapped($event, topic)" detail-push>
       <!--  <ion-item (click)="itemTapped($event, topic)" detail-push>-->
 
         <ion-item>
@@ -49,17 +49,6 @@
           <p> <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon> {{member.reputation}}</p> 
 
         </ion-item>
-
-        <!-- <ion-item-options side="left">
-          <button ion-button (click)="favorite(item)"><ion-icon name="star"></ion-icon>Favorite</button>
-          <button ion-button color="danger" (click)="share(item)"><ion-icon name="share"></ion-icon>Share</button>
-        </ion-item-options>
-
-        
-        <ion-item-options side="right">
-          <button ion-button color="danger" (click)="unread(item)"><ion-icon name="trash"></ion-icon>Delete</button>
-        </ion-item-options> -->
-
 
         <ion-item-options side="left">
           <button ion-button color="primary">
@@ -83,18 +72,7 @@
       </ion-item-sliding>
     </ion-item-group>
    
-    <ion-item-divider color="light">Mock Exams</ion-item-divider>
-    <!-- <ion-item-group [reorder]="reorder" (ionItemReorder)="reorderExams($event)">
-      <ion-item *ngFor="let exam of topics | slice:8:10; let i = index;" (click)="itemTapped($event, exam)" detail-push>
-        <ion-thumbnail item-left>
-          <img src="{{exam.icon}}">
-        </ion-thumbnail>
-        <h2>{{exam.title}}</h2>
-        <p>{{exam.note}}, {{exam.time}}</p>
-         <p>Last Score: {{exam.hiScore || '(Not attempted)'}} {{exam.hiScore ? '%' : '' }}</p>
-      </ion-item>
-    </ion-item-group> -->
-
+    <ion-item-divider color="light">K-Z</ion-item-divider>
     <ion-list>
       <ion-item-sliding>
         <ion-item>

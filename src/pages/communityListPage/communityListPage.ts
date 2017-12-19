@@ -17,8 +17,8 @@ import { MySocialShareService } from '../../providers/my-social-share-service';
 export class CommunityListPage {
   selectedItem: any;
   icons: string[];
-  // topics: Array<{ no: number, title: string, note: string, icon: string, hiScore: string }>;
-  topics: Array<{ pic: string, name: string, publicKey: string, reputation: string }>;
+  // members : Array<{ no: number, title: string, note: string, icon: string, hiScore: string }>;
+  members: Array<{ pic: string, name: string, publicKey: string, reputation: string }>;
   reorder: boolean = false;
   reorderIcon: string = "options";
   searchInput:string="";
@@ -34,9 +34,8 @@ export class CommunityListPage {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
 
-    // this.topics = dataService.getTopicsArray();
-    this.topics = dataService.getCommunityMembers();
-    console.log('Members==>',this.topics);
+    this.members  = dataService.getCommunityMembers();
+    console.log('Members==>',this.members);
 
 
   }
@@ -52,18 +51,12 @@ export class CommunityListPage {
   }
 
   itemTapped(event, topic) {
-    if(topic.no > 8) {
-      this.openModal(topic);
-    } else {
-     this.startExam(topic); 
-    }
-  }
-
-  startExam(topic) {
-     this.navCtrl.push(TopicDetailPage, {
+    this.navCtrl.push(TopicDetailPage, {
       topic: topic
     });
   }
+
+  
 
     openModal(topic) {
     let modal = this.modalCtrl.create(ExamStartingModal,topic,{'enableBackdropDismiss':true});
@@ -76,7 +69,7 @@ export class CommunityListPage {
         console.log("Loading dismissed");
       });;
       } else if (data && !data.cancel) {
-        this.startExam(topic);
+        // this.startExam(topic);
       }
    });
     modal.present();
@@ -87,15 +80,6 @@ export class CommunityListPage {
     this.reorderIcon = this.reorder ? "close-circle" : "options";
   }
 
-  reorderTopics(indexes) {
-    console.log('ReORDER:', indexes);
-    this.topics = reorderArray(this.topics, indexes);
-  }
-
-  reorderExams(indexes) {
-    console.log('ReORDER:', indexes);
-    this.exams = reorderArray(this.exams, indexes);
-  }
 
 
 
