@@ -36,10 +36,10 @@ export class MyApp {
     this.initializeApp();
 
     this.pages = [
-      { title: 'Community', component: CommunityListPage, icon: 'list' },
+      { title: 'Community', component: CommunityListPage, icon: 'people' },
       { title: 'My Contracts', component: WhitepapersPage, icon: 'folder' },
-      { title: 'Video Resources', component: VideosPage, icon: 'logo-youtube' },
-      { title: 'Contact Us', component: ContactUsPage, icon: 'people' }
+      { title: 'My Balance', component: VideosPage, icon: 'cash' },
+      { title: 'Contact Us', component: ContactUsPage, icon: 'help-circle' }
     ];
 
 

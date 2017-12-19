@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform, NavParams, ViewController } from 'ionic-angular';
+import { Platform, NavParams, ViewController,AlertController ,ToastController} from 'ionic-angular';
 
 
 
@@ -15,11 +15,14 @@ export class ExplanationModal {
    ref: any = "NA";
    pic:string;
    name:string;
+   confirmSubmitAlert: any;
 
    constructor(
     public platform: Platform,
     public params: NavParams,
-    public viewCtrl: ViewController
+    public viewCtrl: ViewController,
+    public alertCtrl: AlertController,
+    private toastCtrl: ToastController
   ) {
 
     this.pic = params.get('pic');
@@ -36,4 +39,44 @@ export class ExplanationModal {
   dismiss() {
     this.viewCtrl.dismiss();
   }
+
+  presentSubmitConfirm() {
+    this.confirmSubmitAlert = this.alertCtrl.create({
+      title: 'Confirm Submit',
+      message: 'This will invite ' + this.name + ' to enter your contract. Do you want to proceed?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Yes',
+          handler: () => {
+            console.log('Submit clicked');
+            // Submit the exam.
+
+            this.dismiss();
+            this.presentToast();
+          }
+        }
+      ]
+    });
+    this.confirmSubmitAlert.present();
+  }
+
+
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: 'Invitation was successfully sent,',
+      duration: 2000,
+      position: 'bottom'
+    });
+    toast.present();
+  }
+  
+
+
 }

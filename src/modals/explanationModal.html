@@ -69,25 +69,21 @@
 
       <ion-item>
         <ion-label fixed>
-          <h3>Start Date</h3>
+          <h3>End Date</h3>
         </ion-label>
         <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="todaysDate"></ion-datetime>
       </ion-item>
 
-<!-- 
-        <div style="text-align: center;">
-          <button ion-button (click)="dismiss()">
-            Submit
-          </button>
-        </div>
-        <div style="text-align: center;">
-          <button ion-button (click)="dismiss()">
-            Cancel
-          </button>
-        </div> -->
+      <ion-item>
+          <ion-label fixed>
+            <h3>Notes:</h3>
+          </ion-label>
+          <ion-textarea placeholder="Enter notes"></ion-textarea>
+        </ion-item>
+
 
         <div style="text-align:center">
-            <button (click)="presentAbortConfirm()"  ion-button icon-left>
+            <button (click)="presentSubmitConfirm()"  ion-button icon-left>
                       <ion-icon name="checkmark-circle-outline"></ion-icon>
                           Submit
                         </button>
