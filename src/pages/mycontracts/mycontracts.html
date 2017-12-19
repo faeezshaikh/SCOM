@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Contracts</ion-title>
+  <!--<ion-buttons end>
+      <button ion-button icon-only (click)="reorderNow()">
+        <ion-icon [name]="reorderIcon"></ion-icon>
+      </button>
+    </ion-buttons>-->
+  </ion-navbar>
+  
+</ion-header>
+
+<ion-content padding>
+
+    <div padding>
+        <ion-segment [(ngModel)]="myContracts">
+          <ion-segment-button value="current">
+            Current
+          </ion-segment-button>
+          <ion-segment-button value="past">
+            Past
+          </ion-segment-button>
+          <ion-segment-button value="pending">
+              Pending
+            </ion-segment-button>
+        </ion-segment>
+      </div>
+      
+      <div [ngSwitch]="myContracts">
+        <ion-list *ngSwitchCase="'current'">
+          <ion-item *ngFor="let m of current">
+            <ion-thumbnail item-left>
+              <img src="{{m.pic}}">
+            </ion-thumbnail>
+            <h2>Ruby</h2>
+          </ion-item>
+          ...
+        </ion-list>
+      
+        <ion-list *ngSwitchCase="'past'">
+          <ion-item *ngFor="let n of past">
+            <ion-thumbnail item-left>
+              <img src="{{n.pic}}">
+            </ion-thumbnail>
+            <h2>Luna</h2>
+          </ion-item>
+          ...
+        </ion-list>
+
+
+        <ion-list *ngSwitchCase="'pending'">
+            <ion-item *ngFor="let p of pending">
+              <ion-thumbnail item-left>
+                <img src="{{p.pic}}">
+              </ion-thumbnail>
+              <h2>Luna</h2>
+            </ion-item>
+            ...
+          </ion-list>
+
+
+      </div>
+</ion-content>
