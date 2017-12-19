@@ -13,15 +13,17 @@ export class ExplanationModal {
    answer: any;
    explanation: any;
    ref: any = "NA";
+   pic:string;
+   name:string;
 
    constructor(
     public platform: Platform,
     public params: NavParams,
     public viewCtrl: ViewController
   ) {
-    this.explanation = params.get('Explanation');
-    this.ref = params.get('Ref');
-    this.question = params.get('Name');
+
+    this.pic = params.get('pic');
+    this.name = params.get('name');
     console.log("Explanation: ", this.explanation);
     console.log("Ref: ", this.ref);
   }

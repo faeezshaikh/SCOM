@@ -68,8 +68,8 @@ export class TopicDetailPage {
   }
 
 
-  openExplanationModal(question) {
-    let modal = this.modalCtrl.create(ExplanationModal, question);
+  openContractModal(member) {
+    let modal = this.modalCtrl.create(ExplanationModal, member);
     modal.present();
   }
 
