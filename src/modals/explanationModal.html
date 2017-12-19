@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>
-      Explanation
+      Contract
     </ion-title>
     <ion-buttons start>
       <button ion-button (click)="dismiss()">
@@ -25,7 +25,7 @@
     <hr/>
 
     <ion-card-content>
-      <strong>Question: </strong> <br>{{question}}
+      <!-- <strong>Question: </strong> <br>{{question}}
       <p>&nbsp;</p>
       <strong>Explanation:</strong> <br>{{explanation}}
 
@@ -36,12 +36,71 @@
               </a>
         </p>
 
-        <p></p>
+        <p></p> -->
+
+
+
+
+      <!-- <ion-item>
+            <ion-label floating> Your amount:</ion-label>
+            <ion-input type="number"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label floating>{{name}}'s amount:</ion-label>
+            <ion-input type="number"></ion-input>
+          </ion-item> -->
+
+
+      <ion-item>
+        <ion-label fixed>
+          <h3>Your amt:</h3>
+        </ion-label>
+        <ion-input type="number" placeholder="50 Trex" value=""></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>
+          <h3>{{name}}'s amt:</h3>
+        </ion-label>
+        <ion-input type="number" placeholder="50 Trex"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label fixed>
+          <h3>Start Date</h3>
+        </ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="todaysDate"></ion-datetime>
+      </ion-item>
+
+<!-- 
         <div style="text-align: center;">
-        <button  ion-button (click)="dismiss()">
-             Close  
-        </button>
+          <button ion-button (click)="dismiss()">
+            Submit
+          </button>
         </div>
+        <div style="text-align: center;">
+          <button ion-button (click)="dismiss()">
+            Cancel
+          </button>
+        </div> -->
+
+        <div style="text-align:center">
+            <button (click)="presentAbortConfirm()"  ion-button icon-left>
+                      <ion-icon name="checkmark-circle-outline"></ion-icon>
+                          Submit
+                        </button>
+
+
+            <button  color="danger" ion-button icon-left (click)="dismiss()">
+                          Cancel &nbsp;
+                           
+                           <ion-icon name="close"></ion-icon>
+                        </button>
+
+        </div>
+
     </ion-card-content>
 
 
