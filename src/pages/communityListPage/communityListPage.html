@@ -1,9 +1,18 @@
+<style>
+.item-avatar  {     
+  width:100% !important;  
+  height : 100% !important;  
+  max-width: 200px !important; 
+  max-height: 400px !important;
+  }
+</style>
+
 <ion-header>
   <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Practice Exams</ion-title>
+    <ion-title>Community Members</ion-title>
   <!--<ion-buttons end>
       <button ion-button icon-only (click)="reorderNow()">
         <ion-icon [name]="reorderIcon"></ion-icon>
@@ -15,45 +24,67 @@
 
 
 <ion-content>
-<!--<ion-searchbar
-  [(ngModel)]="myInput"
+<ion-searchbar
+  [(ngModel)]="searchInput"
   [showCancelButton]="shouldShowCancel"
   (ionInput)="onInput($event)"
   (ionCancel)="onCancel($event)">
-</ion-searchbar>-->
+</ion-searchbar>
 
   <ion-list>
+  
 
     <ion-item-divider color="light">Practice </ion-item-divider>
     <ion-item-group [reorder]="reorder" (ionItemReorder)="reorderTopics($event)">
-      <!--<ion-item-sliding *ngFor="let topic of topics">
-        <ion-item (click)="itemTapped($event, topic)" detail-push>-->
+      <ion-item-sliding *ngFor="let member of topics | slice:0:8; let i = index;" (click)="itemTapped($event, topic)" detail-push>
+      <!--  <ion-item (click)="itemTapped($event, topic)" detail-push>-->
 
-        <ion-item  *ngFor="let topic of topics | slice:0:8; let i = index;" (click)="itemTapped($event, topic)" detail-push>
+        <ion-item>
           
-          <ion-thumbnail item-left>
-            <img src="{{topic.icon}}">
-          </ion-thumbnail>
-          <h2>{{topic.title}}</h2>
-          <p>{{topic.note}}, {{topic.time}}</p>
+          <ion-avatar item-left>
+            <img src="{{member.pic}}">
+          </ion-avatar>
+          <h2>{{member.name}}</h2>
+          <p>Member Since: Jan 8, 2017</p>
+          <p> <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon> {{member.reputation}}</p> 
 
-          <p>Last Score: {{topic.hiScore || '(Not attempted)'}} {{topic.hiScore ? '%' : '' }}</p>
         </ion-item>
 
-        <!--<ion-item-options side="left">
+        <!-- <ion-item-options side="left">
           <button ion-button (click)="favorite(item)"><ion-icon name="star"></ion-icon>Favorite</button>
           <button ion-button color="danger" (click)="share(item)"><ion-icon name="share"></ion-icon>Share</button>
         </ion-item-options>
 
+        
         <ion-item-options side="right">
           <button ion-button color="danger" (click)="unread(item)"><ion-icon name="trash"></ion-icon>Delete</button>
-        </ion-item-options>-->
+        </ion-item-options> -->
 
-      <!--</ion-item-sliding>-->
+
+        <ion-item-options side="left">
+          <button ion-button color="primary">
+            <ion-icon name="text"></ion-icon>
+            Text
+          </button>
+          <button ion-button color="secondary">
+            <ion-icon name="call"></ion-icon>
+            Call
+          </button>
+        </ion-item-options>
+        <ion-item-options side="right">
+          <button ion-button color="primary">
+            <ion-icon name="mail"></ion-icon>
+            Email
+          </button>
+        </ion-item-options>
+
+
+
+      </ion-item-sliding>
     </ion-item-group>
    
     <ion-item-divider color="light">Mock Exams</ion-item-divider>
-    <ion-item-group [reorder]="reorder" (ionItemReorder)="reorderExams($event)">
+    <!-- <ion-item-group [reorder]="reorder" (ionItemReorder)="reorderExams($event)">
       <ion-item *ngFor="let exam of topics | slice:8:10; let i = index;" (click)="itemTapped($event, exam)" detail-push>
         <ion-thumbnail item-left>
           <img src="{{exam.icon}}">
@@ -62,7 +93,36 @@
         <p>{{exam.note}}, {{exam.time}}</p>
          <p>Last Score: {{exam.hiScore || '(Not attempted)'}} {{exam.hiScore ? '%' : '' }}</p>
       </ion-item>
-    </ion-item-group>
+    </ion-item-group> -->
+
+    <ion-list>
+      <ion-item-sliding>
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="http://www.hoeinger-sv.de/wp-content/uploads/2017/05/staff6.jpg?x32921">
+          </ion-avatar>
+          <h2>Finn</h2>
+          <h3>Don't Know What To Do!</h3>
+          <p>I've had a pretty messed up day. If we just...</p>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="primary">
+            <ion-icon name="text"></ion-icon>
+            Text
+          </button>
+          <button ion-button color="secondary">
+            <ion-icon name="call"></ion-icon>
+            Call
+          </button>
+        </ion-item-options>
+        <ion-item-options side="right">
+          <button ion-button color="primary">
+            <ion-icon name="mail"></ion-icon>
+            Email
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
 
   </ion-list>
 

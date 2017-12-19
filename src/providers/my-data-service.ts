@@ -12,9 +12,12 @@ export class MyDataService {
   data: any = null;
   fileName: string;
   topics = [];
+  communityMembers = [];
   loggedInUserEmail: string;
 
   constructor(public http: Http,public storage: MyLocalStorage) {
+
+    this.initCommunityMembers();
     // console.log('Hello DataService Provider');
     this.topicMap = new Map<number, string>();
     this.topicMap.set(1, 'assets/data/ha&bc.js');
@@ -62,6 +65,22 @@ export class MyDataService {
   });
 }
 
+  initCommunityMembers() {
+    this.communityMembers.push({'pic':'http://sanitaryconstruction.com/wp-content/uploads/2016/01/testi-3.jpg','name':'John Doe','publicKey':'12345','reputation':'45'});
+    this.communityMembers.push({'pic':'http://www.hoeinger-sv.de/wp-content/uploads/2017/05/staff6.jpg?x32921','name':'Tom Rice','publicKey':'12345','reputation':'45'});
+    this.communityMembers.push({'pic':'https://silkui.outsystems.com/img/Avatar.jpg?1627','name':'Joe Dough','publicKey':'12345','reputation':'45'});
+
+
+    this.communityMembers.push({'pic':'http://i1.wp.com/www.alicekeeler.com/wp-content/uploads/2017/03/Alice-Headshot.jpg?w=1080','name':'Joe Dough','publicKey':'12345','reputation':'45'});
+    this.communityMembers.push({'pic':'https://2oq5cg28288838bmfu32g94v-wpengine.netdna-ssl.com/wp-content/uploads/2015/01/Alice-Bricogne-320x289.jpg','name':'Joe Dough','publicKey':'12345','reputation':'45'});
+    this.communityMembers.push({'pic':'https://www.ogier.com/images/people/alice-bricogne/alice-bricogne.jpg','name':'Joe Dough','publicKey':'12345','reputation':'45'});
+
+    
+  }
+  getCommunityMembers() {
+    return this.communityMembers;
+  }
+
   getTopicsArray() {
     console.log(" ==== Getting Topics Array ====");
     
@@ -97,6 +116,8 @@ export class MyDataService {
     
 
 }
+
+
 
 setLoggedInUserEmail(email) {
   console.log('Email set to :' , email);

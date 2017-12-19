@@ -17,12 +17,15 @@ import { MySocialShareService } from '../../providers/my-social-share-service';
 export class CommunityListPage {
   selectedItem: any;
   icons: string[];
-  topics: Array<{ no: number, title: string, note: string, icon: string, hiScore: string }>;
+  // topics: Array<{ no: number, title: string, note: string, icon: string, hiScore: string }>;
+  topics: Array<{ pic: string, name: string, publicKey: string, reputation: string }>;
   reorder: boolean = false;
   reorderIcon: string = "options";
+  searchInput:string="";
   @ViewChild(Content) content: Content;
 
   exams: Array<{ no: number, title: string, note: string, icon: string, hiScore: string }>;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: MyLocalStorage, public dataService: MyDataService,
               private alertCtrl: AlertController,public modalCtrl: ModalController,
               public mySocialShareService: MySocialShareService) {
@@ -31,9 +34,10 @@ export class CommunityListPage {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
 
-    this.topics = dataService.getTopicsArray();
+    // this.topics = dataService.getTopicsArray();
+    this.topics = dataService.getCommunityMembers();
+    console.log('Members==>',this.topics);
 
-    this.getHiScores();
 
   }
 
@@ -44,7 +48,6 @@ export class CommunityListPage {
 
   ionViewWillEnter() {
     console.log("View Will Enter");
-    this.getHiScores();
 
   }
 
@@ -94,17 +97,7 @@ export class CommunityListPage {
     this.exams = reorderArray(this.exams, indexes);
   }
 
-  getHiScores() {
-    // console.log('Retrieving HiScore');
-    this.topics.forEach(topic => {
-      this.storage.getScore(topic.no).then(result => {
-        topic.hiScore = result;
-        // console.log('Retrieving Topics Score ...Set Topics ' + topic.no + ' hiscore to:' + result);
 
-      })
-
-    });
-  }
 
 
   shareViaFacebook() {

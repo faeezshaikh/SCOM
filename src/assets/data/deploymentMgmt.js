@@ -1,7 +1,7 @@
 {
     "quiz": {
         "name": "Deployment",
-        "logo" : "assets/img/SNS.png",
+        "logo" : "http://sanitaryconstruction.com/wp-content/uploads/2016/01/testi-3.jpg",
         "time":"20 minutes"
     },
     "questions": [
