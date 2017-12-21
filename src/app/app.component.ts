@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { ContactUsPage } from '../pages/contactUsPage/contactUsPage';
 import { CommunityListPage } from '../pages/communityListPage/communityListPage';
-import { VideosPage } from '../pages/videos/videos';
+import { MyBalancePage } from '../pages/mybalance/mybalance';
 import {MyContractsPage } from '../pages/mycontracts/mycontracts';
 
 import {LoginPage, LogoutPage} from "../pages/auth/auth";
@@ -38,7 +38,7 @@ export class MyApp {
     this.pages = [
       { title: 'Community', component: CommunityListPage, icon: 'people' },
       { title: 'My Contracts', component: MyContractsPage, icon: 'folder' },
-      { title: 'My Balance', component: VideosPage, icon: 'cash' },
+      { title: 'My Balance', component: MyBalancePage, icon: 'cash' },
       { title: 'Contact Us', component: ContactUsPage, icon: 'help-circle' }
     ];
 
