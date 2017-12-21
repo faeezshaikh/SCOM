@@ -16,6 +16,7 @@ export class ExplanationModal {
    pic:string;
    name:string;
    confirmSubmitAlert: any;
+   reputation:string;
 
    constructor(
     public platform: Platform,
@@ -27,6 +28,7 @@ export class ExplanationModal {
 
     this.pic = params.get('pic');
     this.name = params.get('name');
+    this.reputation = params.get('reputation');
     console.log("Explanation: ", this.explanation);
     console.log("Ref: ", this.ref);
   }

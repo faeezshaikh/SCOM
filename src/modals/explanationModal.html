@@ -20,7 +20,10 @@
         <img src="{{pic}}">
       </ion-avatar>
       <h2>{{name}}</h2>
-      <p>Cloud Pros</p>
+      <p *ngIf="reputation > 50"> <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon> </p> 
+      <p *ngIf="reputation < 50 && reputation > 30 "> <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon> </p> 
+      <p *ngIf="reputation < 30"> <ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon> </p> 
+
     </ion-item>
     <hr/>
 
