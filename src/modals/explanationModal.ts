@@ -16,7 +16,7 @@ export class ExplanationModal {
    pic:string;
    name:string;
    confirmSubmitAlert: any;
-   reputation:string;
+   reputation:any;
 
    constructor(
     public platform: Platform,

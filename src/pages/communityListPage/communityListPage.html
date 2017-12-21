@@ -46,9 +46,9 @@
           </ion-avatar>
           <h2>{{member.name}}</h2>
           <p>Member Since: Jan 8, 2017</p>
+          <p *ngIf="member.reputation < 30"> <ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon> {{member.reputation}}</p> 
           <p *ngIf="member.reputation > 50 "> <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon> {{member.reputation}}</p> 
           <p *ngIf="member.reputation < 50 && member.reputation > 30 "> <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon> {{member.reputation}}</p> 
-          <p *ngIf="member.reputation < 30"> <ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon> {{member.reputation}}</p> 
 
         </ion-item>
 

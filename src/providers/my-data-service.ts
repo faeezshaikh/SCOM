@@ -72,14 +72,14 @@ getMemberDetails(index: number) {
 
   initCommunityMembers() {
   
-    this.communityMembers.push({'pic':'http://sanitaryconstruction.com/wp-content/uploads/2016/01/testi-3.jpg','name':'John Doe','publicKey':'12345','reputation':'45'});
-    this.communityMembers.push({'pic':'http://www.hoeinger-sv.de/wp-content/uploads/2017/05/staff6.jpg?x32921','name':'Tom Rice','publicKey':'12345','reputation':'55'});
-    this.communityMembers.push({'pic':'https://silkui.outsystems.com/img/Avatar.jpg?1627','name':'Joe Dough','publicKey':'12345','reputation':'45'});
+    this.communityMembers.push({'pic':'http://sanitaryconstruction.com/wp-content/uploads/2016/01/testi-3.jpg','name':'John Doe','publicKey':'12345','reputation':45});
+    this.communityMembers.push({'pic':'http://www.hoeinger-sv.de/wp-content/uploads/2017/05/staff6.jpg?x32921','name':'Tom Rice','publicKey':'12345','reputation':55});
+    this.communityMembers.push({'pic':'https://silkui.outsystems.com/img/Avatar.jpg?1627','name':'Joe Dough','publicKey':'12345','reputation':45});
 
 
-    this.communityMembers.push({'pic':'http://i1.wp.com/www.alicekeeler.com/wp-content/uploads/2017/03/Alice-Headshot.jpg?w=1080','name':'Kelly Bush','publicKey':'12345','reputation':'65'});
-    this.communityMembers.push({'pic':'https://2oq5cg28288838bmfu32g94v-wpengine.netdna-ssl.com/wp-content/uploads/2015/01/Alice-Bricogne-320x289.jpg','name':'Robin Weber','publicKey':'12345','reputation':'15'});
-    this.communityMembers.push({'pic':'https://www.ogier.com/images/people/alice-bricogne/alice-bricogne.jpg','name':'Alice Keys','publicKey':'12345','reputation':'25'});
+    this.communityMembers.push({'pic':'http://i1.wp.com/www.alicekeeler.com/wp-content/uploads/2017/03/Alice-Headshot.jpg?w=1080','name':'Kelly Bush','publicKey':'12345','reputation':65});
+    this.communityMembers.push({'pic':'https://2oq5cg28288838bmfu32g94v-wpengine.netdna-ssl.com/wp-content/uploads/2015/01/Alice-Bricogne-320x289.jpg','name':'Robin Weber','publicKey':'12345','reputation':15});
+    this.communityMembers.push({'pic':'https://www.ogier.com/images/people/alice-bricogne/alice-bricogne.jpg','name':'Alice Keys','publicKey':'12345','reputation':25});
 
     
   }
